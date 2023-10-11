@@ -1,0 +1,19 @@
+
+version: '3.3'
+
+services:
+    support:
+        networks:
+            - dockernet
+        build: ./
+        ports:
+            - "3000"
+        environment:
+        - VITE_HOST=https://fhir.integrated.ml/hs
+        - VITE_GOC=enl4OjQzNjM3NDhLaW5n
+        - VITE_AHL_HOST=https://safemauritius.govmu.org
+        - VITE_AHL=c3VwcG9ydDpjMHYxZDIwMjA=
+
+networks:
+    dockernet:
+        external: true
